@@ -1,0 +1,124 @@
+/* ─── LIGHT MODE OVERRIDES ─── */
+html[data-theme="light"] {
+  --bg: #f4f4f8;
+  --card: #ffffff;
+  --border: #dddde8;
+  --accent: #6c63ff;
+  --accent2: #ff6b9d;
+  --text: #18182a;
+  --muted: #707088;
+  --success: #16a34a;
+  --error: #dc2626;
+  --input-bg: #ebebf3;
+  --surface: #eaeaf2;
+}
+
+html[data-theme="light"] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Fix auth page gradient for light mode */
+html[data-theme="light"] .auth-bg::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(108,99,255,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,107,157,0.07) 0%, transparent 55%);
+}
+html[data-theme="light"] .auth-bg::after {
+  background-image:
+    linear-gradient(rgba(108,99,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108,99,255,0.05) 1px, transparent 1px);
+}
+
+/* Fix header backdrop for light mode */
+html[data-theme="light"] .shop-header {
+  background: rgba(244, 244, 248, 0.92);
+}
+
+/* Fix placeholder text */
+html[data-theme="light"] input::placeholder {
+  color: #aaaabc;
+}
+
+/* Fix logo text gradient on light */
+html[data-theme="light"] .logo-text {
+  background: linear-gradient(90deg, #18182a, #7070aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Fix auth card shadow on light */
+html[data-theme="light"] .auth-card {
+  box-shadow: 0 16px 48px rgba(60, 60, 100, 0.12);
+}
+
+/* Fix skeleton shimmer on light */
+html[data-theme="light"] .skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--input-bg) 25%,
+    #dcdce8 50%,
+    var(--input-bg) 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* Fix select option backgrounds */
+html[data-theme="light"] select option {
+  background: #ffffff;
+  color: #18182a;
+}
+
+/* Fix product card hover shadow */
+html[data-theme="light"] .product-card:hover {
+  box-shadow: 0 16px 40px rgba(100, 100, 160, 0.15);
+}
+
+/* Fix cart overlay */
+html[data-theme="light"] .cart-overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ─── THEME TOGGLE BUTTON ─── */
+.theme-toggle {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  transform: scale(1.08);
+}
+
+/* Auth page floating toggle */
+.theme-toggle-float {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.theme-toggle-float:hover {
+  border-color: var(--accent);
+  transform: scale(1.08);
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EverREST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <script src="js/theme.js"></script>
+  </head>
+  <body>
+    <button class="theme-toggle-float" title="Switch theme">☀️</button>
+    <div class="auth-bg">
+      <div class="auth-card">
+        <div class="logo">
+          <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M53.5 245.1L110.3 131.4C121.2 109.7 143.3 96 167.6 96L472.5 96C496.7 96 518.9 109.7 529.7 131.4L586.5 245.1C590.1 252.3 592 260.2 592 268.3C592 295.6 570.8 318 544 319.9L544 512C544 529.7 529.7 544 512 544C494.3 544 480 529.7 480 512L480 320L384 320L384 496C384 522.5 362.5 544 336 544L144 544C117.5 544 96 522.5 96 496L96 319.9C69.2 318 48 295.6 48 268.3C48 260.3 49.9 252.3 53.5 245.1zM160 320L160 432C160 440.8 167.2 448 176 448L304 448C312.8 448 320 440.8 320 432L320 320L160 320z"/></svg></div>
+          <div class="logo-text">EverREST</div>
+        </div>
+        <h1>ანგარიშის შექმნა</h1>
+        <p class="subtitle">შეავსეთ ყველა სავალდებულო ველი</p>
+        <div class="signup-scroll">
+          <div class="form-row">
+            <div class="field"><label>სახელი *</label><input type="text" id="firstName" placeholder="John" /></div>
+            <div class="field"><label>გვარი *</label><input type="text" id="lastName" placeholder="Doe" /></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label>ასაკი *</label><input type="number" id="age" placeholder="25" min="1" max="120" /></div>
+            <div class="field">
+              <label>სქესი *</label>
+              <select id="gender">
+                <option value="">აირჩიეთ</option>
+                <option value="MALE">მამრობითი</option>
+                <option value="FEMALE">მდედრობითი</option>
+                <option value="OTHER">სხვა</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label>ელ-ფოსტა *</label><input type="email" id="email" placeholder="john@doe.com" /></div>
+          <div class="field">
+            <label>პაროლი *</label>
+            <div class="pass-wrap">
+              <input type="password" id="password" placeholder="min 8 სიმბოლო" />
+              <button class="pass-toggle" id="toggle-password">👁</button>
+            </div>
+          </div>
+          <div class="field"><label>მისამართი *</label><input type="text" id="address" placeholder="თბილისი, საქართველო" /></div>
+          <div class="form-row">
+            <div class="field"><label>ტელეფონი *</label><input type="text" id="phone" placeholder="+995599123456" /></div>
+            <div class="field"><label>ZIP კოდი *</label><input type="text" id="zipcode" placeholder="0178" /></div>
+          </div>
+          <div class="field"><label>ავატარი (URL)</label><input type="text" id="avatar" placeholder="https://..." /></div>
+        </div>
+        <div id="alert"></div>
+        <button class="btn-primary" id="signup-btn">რეგისტრაცია</button>
+        <p class="switch-link">უკვე გაქვს ანგარიში? <a href="html/signin.html">შესვლა</a></p>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>

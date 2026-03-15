@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>პროფილი — EverREST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/profile.css"/>
+  <link rel="stylesheet" href="../css/theme.css"/>
+  <script src="../js/theme.js"></script>
+</head>
+<body>
+
+  <header class="shop-header">
+    <div class="header-inner">
+      <div class="logo" id="btn-logo" style="cursor:pointer">
+        <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M53.5 245.1L110.3 131.4C121.2 109.7 143.3 96 167.6 96L472.5 96C496.7 96 518.9 109.7 529.7 131.4L586.5 245.1C590.1 252.3 592 260.2 592 268.3C592 295.6 570.8 318 544 319.9L544 512C544 529.7 529.7 544 512 544C494.3 544 480 529.7 480 512L480 320L384 320L384 496C384 522.5 362.5 544 336 544L144 544C117.5 544 96 522.5 96 496L96 319.9C69.2 318 48 295.6 48 268.3C48 260.3 49.9 252.3 53.5 245.1zM160 320L160 432C160 440.8 167.2 448 176 448L304 448C312.8 448 320 440.8 320 432L320 320L160 320z"/></svg></div>
+        <div class="logo-text">EverREST Shop</div>
+      </div>
+      <nav class="header-nav">
+        <button class="nav-btn" id="btn-shop">🛍 მაღაზია</button>
+        <button class="nav-btn active">👤 პროფილი</button>
+      </nav>
+      <div class="header-right">
+        <button class="theme-toggle" title="Switch theme">☀️</button>
+        <button class="btn-signout desktop-only" id="btn-signout">გასვლა</button>
+        <button class="burger-btn" id="burger-btn" aria-label="მენიუ">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <button class="nav-btn" id="m-btn-shop">🛍 მაღაზია</button>
+      <button class="nav-btn active">👤 პროფილი</button>
+      <button class="nav-btn nav-btn-signout" id="m-btn-signout">🚪 გასვლა</button>
+    </div>
+  </header>
+
+  <div class="profile-wrap">
+    <div class="profile-card">
+      <div class="avatar-wrap">
+        <img id="p-avatar" src="" alt="avatar" onerror="this.src='https://api.dicebear.com/7.x/pixel-art/svg?seed=user'"/>
+      </div>
+      <div class="profile-name"  id="p-name">—</div>
+      <div class="profile-email" id="p-email">—</div>
+      <div class="profile-badge" id="p-verified">—</div>
+    </div>
+
+    <div class="profile-right">
+      <div class="form-card">
+        <h2 class="section-title">პროფილის რედაქტირება</h2>
+        <div id="update-alert"></div>
+        <div class="form-row">
+          <div class="field"><label>სახელი</label><input type="text" id="p-firstName"/></div>
+          <div class="field"><label>გვარი</label><input type="text" id="p-lastName"/></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>ასაკი</label><input type="number" id="p-age"/></div>
+          <div class="field">
+            <label>სქესი</label>
+            <select id="p-gender">
+              <option value="MALE">მამრობითი</option>
+              <option value="FEMALE">მდედრობითი</option>
+              <option value="OTHER">სხვა</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>ელ-ფოსტა</label><input type="email" id="p-email-input"/></div>
+        <div class="field"><label>მისამართი</label><input type="text" id="p-address"/></div>
+        <div class="form-row">
+          <div class="field"><label>ტელეფონი</label><input type="text" id="p-phone"/></div>
+          <div class="field"><label>ZIP</label><input type="text" id="p-zipcode"/></div>
+        </div>
+        <div class="field"><label>ავატარი (URL)</label><input type="text" id="p-avatar-url"/></div>
+        <button class="btn-primary" id="btn-update">ცვლილებების შენახვა</button>
+      </div>
+
+      <div class="form-card">
+        <h2 class="section-title">პაროლის შეცვლა</h2>
+        <div id="password-alert"></div>
+        <div class="field">
+          <label>ძველი პაროლი</label>
+          <div class="pass-wrap">
+            <input type="password" id="cp-old" placeholder="••••••••"/>
+            <button class="pass-toggle" id="toggle-old">👁</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>ახალი პაროლი</label>
+          <div class="pass-wrap">
+            <input type="password" id="cp-new" placeholder="min 8 სიმბოლო"/>
+            <button class="pass-toggle" id="toggle-new">👁</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>გაიმეორე ახალი პაროლი</label>
+          <div class="pass-wrap">
+            <input type="password" id="cp-confirm" placeholder="••••••••"/>
+            <button class="pass-toggle" id="toggle-confirm">👁</button>
+          </div>
+        </div>
+        <button class="btn-primary btn-danger" id="btn-change-password">პაროლის შეცვლა</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/profile.js"></script>
+</body>
+</html>
